@@ -1,0 +1,26 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap">
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Dog Years Converter</h1>
+            <form id="myForm" enctype="multipart/form-data">
+                <input
+                    name="humanYears"
+                    type="number"
+                    id="humanYearsInput"
+                    min="0"
+                    max="150"
+                    step="1"
+                    placeholder="Human Years"
+                    required
+                />
+                <input type="submit" value="Convert me to dog years!" />
+            </form>
+            <h3 class="result" id="result"></h3>
+        </div>
+    </body>
+</html>
