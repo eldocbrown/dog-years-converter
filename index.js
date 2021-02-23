@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('myForm').addEventListener('submit', async (e) => {
       e.preventDefault()
-      
+
       const formData = Array.from(new FormData(e.currentTarget))
 
       const numberConversion = Number(formData[0][1])/10.5
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       await new Promise(r => setTimeout(r, 500))
 
       numberConversion > 0 ?
-          resultContainer.innerText = `You're ${yearsToYearsMonthsDays(numberConversion)}!`
+          resultContainer.innerText = `You're ${yearsToYearsMonthsDays(numberConversion)} dog old!`
           :
           resultContainer.innerText = "You're not born yet!"
 
@@ -51,13 +51,19 @@ function yearsToYearsMonthsDays(value)
     const daysStr = days > 1 ? 'days' : 'day'
     let result
     years > 0 ?
-        result = years + ` ${yearsStr}, ` + months + ` ${monthsStr} and ` + days + ` ${daysStr} dog old`
+        result = years + ` ${yearsStr}`
+          + (months > 0 ? (days > 0 ? `, ${months} ${monthsStr}` : ` and ${months} ${monthsStr}`) : '')
+          + (days > 0 ? ` and ${days} ${daysStr}` : '')
         :
-        result = months + ` ${monthsStr} and ` + days + ` ${daysStr} dog old`
+        months > 0 ?
+          result = months + ` ${monthsStr} and ` + days + ` ${daysStr}`
+          :
+          result = days + ` ${daysStr}`
 
     return result
 }
 
+module.exports = yearsToYearsMonthsDays
 
 /*
 
