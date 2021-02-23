@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom Properties, update these for your own design */
+
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-mid: 600;
+    --fw-bold: 900;
+
+    --clr-light: #ffe;
+    --clr-dark: #303030;
+    --clr-accent: darkred;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 2rem;
+    --fs-input: 0.9rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,1),
+          0.125em 0.125em 0.25em rgba(0,0,0,1);
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+body {
+    background-color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 2;
+    text-align: center;
+}
+
+.container {
+    background-color: var(--clr-light);
+    border-radius: 10px;
+    box-shadow: var(--bs);
+    margin: 50px auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: max-content;
+    min-height: 240px;
+}
+
+.title {
+    color: var(--clr-dark);
+}
+
+input[type="submit"] {
+    background-color: #FE5F55;
+    width: 14em;
+    font-weight: var(--fw-mid);
+}
+
+input {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 3em;
+    width: 9em;
+    padding-left: 10px;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-mid);
+    font-size: var(--fs-input);
+}
+
+.result {
+    color: var(--clr-accent);
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;    
+}
+
+.result.fade {
+    opacity: 0;    
+}
