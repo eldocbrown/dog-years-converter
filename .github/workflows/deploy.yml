@@ -1,4 +1,4 @@
-name: Test and Deploy
+name: Test and Deploy to GitHub Pages
 on:
   push:
     branches:
@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
-      run: npm install
+      run: npm install jest --save-dev
     - name: Run the tests with coverage report
       run: npm test
     - name: Deploy to gh-pages
